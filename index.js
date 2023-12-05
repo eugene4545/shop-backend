@@ -17,8 +17,10 @@ const couponRouter = require('./routes/couponRoute')
 const cookieParser = require('cookie-parser');
 const morgan = require("morgan");
 dbconnect();  
+const cors = require("cors");
 
 app.use(morgan("dev"));
+app.use(cors());
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended:false }));
 app.use(cookieParser());

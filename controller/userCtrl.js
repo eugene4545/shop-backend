@@ -1,6 +1,6 @@
 const { generateToken } = require('../config/jwtToken');
 const User = require('../models/userModel')
-const Product = require('../models/productModel'); // Adjust the path as needed
+const Product = require('../models/productModel'); 
 const Cart  = require('../models/cartModel'); 
 const Coupon  = require('../models/couponModel'); 
 const Order  =require('../models/orderModel');
@@ -126,7 +126,7 @@ const logout = asyncHandler(async (req, res) => {
         });
         return res.sendStatus(204);  //forbidden
     }
-    await User.findOneAndUpdate({ refreshToken }, {    //enclosed refreshToken in an object {} used() see ~ 2:17:00
+    await User.findOneAndUpdate({ refreshToken }, {    //enclosed refreshToken in an object {} used() see ~ 2:17 potential bug!
         refreshToken: "",
     });
     res.clearCookie('refreshToken', {

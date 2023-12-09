@@ -21,7 +21,7 @@ const {
     emptyCart,
     applyCoupon,
     createOrder,
-    getOrders,
+    getOrders, 
     updateOrderStatus,
 } = require('../controller/userCtrl');
 const { authMiddleware,isAdmin } = require('../middlewares/authMiddleware');

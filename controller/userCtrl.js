@@ -486,7 +486,7 @@ const getAllOrders = asyncHandler(async (req, res) =>{
     }
 });
 const getOrderByUserId = asyncHandler(async (req, res) =>{
-    const { id } = req.user;
+    const { id } = req.params;
     validateMongoDbId(id);
     try{
         const userorders = await Order.findOne({ orderby: id })
